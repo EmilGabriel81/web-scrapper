@@ -19,6 +19,9 @@ public class BookRepository {
     public List<BookDTO> findAll() {
 
         List<BookDTO> books = null;
+        if (true) {
+            throw new RuntimeException("Simulated scrapper-service failure");
+        }
 
         try {
             Document doc = Jsoup.connect(BOOKS_URL).get();
@@ -38,7 +41,6 @@ public class BookRepository {
                     //process information
                 }
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
