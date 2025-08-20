@@ -10,18 +10,16 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Component
 public class BookRepository {
 
     private final static String BOOKS_URL = "http://books.toscrape.com/";
 
-    public List<BookDTO> findAll() {
+    public CompletableFuture<List<BookDTO>> findAll() {
 
         List<BookDTO> books = null;
-        if (true) {
-            throw new RuntimeException("Simulated scrapper-service failure");
-        }
 
         try {
             Document doc = Jsoup.connect(BOOKS_URL).get();
@@ -44,6 +42,6 @@ public class BookRepository {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return books;
+        return CompletableFuture.completedFuture(books);
     }
 }

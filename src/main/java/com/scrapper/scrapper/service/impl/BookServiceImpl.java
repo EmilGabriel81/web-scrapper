@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 @AllArgsConstructor
@@ -15,7 +16,7 @@ public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
 
     @Override
-    public List<BookDTO> getBooks() {
+    public CompletableFuture<List<BookDTO>> getBooks() {
         return bookRepository.findAll();
     }
 }

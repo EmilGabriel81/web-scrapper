@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @AllArgsConstructor
 @RestController
@@ -22,7 +23,7 @@ public class BookController {
     @GetMapping("/books")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Get list of books")
-    public List<BookDTO> getBooks() {
+    public CompletableFuture<List<BookDTO>> getBooks() {
         return bookService.getBooks();
     }
 }
