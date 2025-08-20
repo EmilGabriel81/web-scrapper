@@ -1,6 +1,6 @@
 package com.scrapper.scrapper.service.impl;
 
-import com.scrapper.scrapper.entity.BookEntity;
+import com.scrapper.scrapper.entity.BookDTO;
 import com.scrapper.scrapper.repository.BookRepository;
 import com.scrapper.scrapper.service.BookService;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ public class BookServiceImpl implements BookService {
     private final BookRepository bookRepository;
 
     @Override
-    public List<BookEntity> getBooks() {
+    public List<BookDTO> getBooks() {
         return bookRepository.findAll();
     }
 }

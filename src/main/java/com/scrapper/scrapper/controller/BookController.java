@@ -1,6 +1,6 @@
 package com.scrapper.scrapper.controller;
 
-import com.scrapper.scrapper.entity.BookEntity;
+import com.scrapper.scrapper.entity.BookDTO;
 import com.scrapper.scrapper.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class BookController {
     @GetMapping("/books")
     @ResponseStatus(HttpStatus.OK)
     @Operation(summary = "Get list of books")
-    public List<BookEntity> getBooks() {
+    public List<BookDTO> getBooks() {
         return bookService.getBooks();
     }
 }

@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
-public class BookEntity {
+public class BookDTO {
     private String title;
     private double price;
 }
