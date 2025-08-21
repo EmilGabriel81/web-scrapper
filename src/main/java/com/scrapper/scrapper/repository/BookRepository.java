@@ -1,6 +1,6 @@
 package com.scrapper.scrapper.repository;
 
-import com.scrapper.scrapper.entity.BookDTO;
+import org.common.dto.BookDTO;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -12,10 +12,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import static org.common.constants.Constants.BOOKS_URL;
+
 @Component
 public class BookRepository {
 
-    private final static String BOOKS_URL = "http://books.toscrape.com/";
 
     public CompletableFuture<List<BookDTO>> findAll() {
 

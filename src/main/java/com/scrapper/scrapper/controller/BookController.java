@@ -1,9 +1,9 @@
 package com.scrapper.scrapper.controller;
 
-import com.scrapper.scrapper.entity.BookDTO;
 import com.scrapper.scrapper.service.BookService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;
+import org.common.dto.BookDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
